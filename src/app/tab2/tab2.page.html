@@ -1,9 +1,29 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Tab Two
+      Registration
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <ion-card>
+    <form [formGroup]="myForm" (ngSubmit)="registerUser()">
+      <ion-item>
+        <ion-label>User :</ion-label>
+        <ion-input type="text" formControlName="username"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Email :</ion-label>
+        <ion-input type="email" formControlName="email"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Password :</ion-label>
+        <ion-input type="password" formControlName="password"></ion-input>
+      </ion-item>
+      <ion-button type="submit" size="small" expand="block" [disabled]="!myForm.valid">
+        Register
+      </ion-button>
+    </form>
+  </ion-card>
+</ion-content>

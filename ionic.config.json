@@ -1,5 +1,8 @@
 {
   "name": "ionic-instagram",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }

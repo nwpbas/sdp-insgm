@@ -6,4 +6,15 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content></ion-content>
+<ion-content>
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <ion-item>
+      <input type="text" formControlName="caption"/>
+    </ion-item>
+    <ion-item>
+      <input type="file" name="image" (change)="onChange($event)" />
+    </ion-item>
+    <ion-button expand="full" type="submit">Upload Image File</ion-button>
+    <ion-button expand="full" type="button" (click)="data()">Data</ion-button>
+  </form>
+</ion-content>

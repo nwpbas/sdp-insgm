@@ -1,38 +1,46 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { TabsPage } from './tabs.page';
+import { AuthGuardService } from '../services/auth-guard.service';
 
 const routes: Routes = [
   {
-    path: 'tabs',
+    path: '',
     component: TabsPage,
     children: [
       {
         path: 'tab1',
-        children: [
-          {
-            path: '',
-            loadChildren: '../tab1/tab1.module#Tab1PageModule'
-          }
-        ]
+        canActivate: [AuthGuardService],
+        loadChildren: '../tab1/tab1.module#Tab1PageModule'
+        // children: [
+        //   {
+        //     path: '',
+        //     loadChildren: '../tab1/tab1.module#Tab1PageModule'
+        //   }
+        // ]
       },
       {
         path: 'tab2',
-        children: [
-          {
-            path: '',
-            loadChildren: '../tab2/tab2.module#Tab2PageModule'
-          }
-        ]
+        canActivate: [AuthGuardService],
+        loadChildren: '../tab2/tab2.module#Tab2PageModule'
+        // children: [
+        //   {
+        //     path: '',
+        //     loadChildren: '../tab2/tab2.module#Tab2PageModule'
+        //   }
+        // ]
       },
       {
         path: 'tab3',
-        children: [
-          {
-            path: '',
-            loadChildren: '../tab3/tab3.module#Tab3PageModule'
-          }
-        ]
+        canActivate: [AuthGuardService],
+        loadChildren: '../tab3/tab3.module#Tab3PageModule'
+        // children: [
+        //   {
+        //     path: '',
+        //     canActivate: [AuthGuardService],
+        //     loadChildren: '../tab3/tab3.module#Tab3PageModule'
+        //   }
+        // ]
       },
       {
         path: '',
@@ -41,11 +49,11 @@ const routes: Routes = [
       }
     ]
   },
-  {
-    path: '',
-    redirectTo: '/tabs/tab1',
-    pathMatch: 'full'
-  }
+  // {
+  //   path: '',
+  //   redirectTo: '/tabs/tab1',
+  //   pathMatch: 'full'
+  // }
 ];
 
 @NgModule({
