@@ -9,13 +9,24 @@ ion-toolbar {
 
 ion-grid {
   background:gray;
-  border: 1px solid black;
+  // border: 1px solid black;
 }
 
-ion-row {
-  border: ๅpx solid black;
-}
+// ion-row {
+//   border: ๅpx solid black;
+// }
 
-ion-col {
-  border: ๅpx solid black;
+// ion-col {
+//   border: ๅpx solid black;
+// }
+
+// ion-list{
+//   padding-top: 0;
+// }
+
+// ion-item-divider {
+//   padding-left: 8px;
+// }
+.myclass12{
+  --padding-start: "20px";
 }

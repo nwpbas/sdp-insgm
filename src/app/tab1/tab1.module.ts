@@ -4,14 +4,15 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Tab1Page } from './tab1.page';
-import { AuthGuardService } from '../services/auth-guard.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   imports: [
     IonicModule,
     CommonModule,
     FormsModule,
-    RouterModule.forChild([{ path: '', component: Tab1Page ,canActivate: [AuthGuardService],}])
+    ReactiveFormsModule,
+    RouterModule.forChild([{ path: '', component: Tab1Page}])
   ],
   declarations: [Tab1Page]
 })

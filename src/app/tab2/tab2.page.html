@@ -1,13 +1,102 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar [hidden]="newPostHidden">
     <ion-title>
-      Registration
+      New Post
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <ion-card>
+  <ion-grid style="background:gray;" [hidden]="newPostHidden">
+    <ion-row>
+      <ion-col>
+        <ion-list>
+          <ion-item-group>
+            <ion-item-divider>
+              <ion-item>
+                <img
+                  [src]="myphoto"
+                />
+              </ion-item>
+            </ion-item-divider>
+            <ion-item>
+              <ion-input
+                type="text"
+                placeholder="Add a comment"
+                [formControl]="pic_caption"
+                autofocus
+              ></ion-input>
+              <ion-buttons slot="end">
+                  <ion-button color="dark" (click)="addPost()">
+                    <ion-icon slot="icon-only" name="send"></ion-icon>
+                  </ion-button>
+                </ion-buttons>
+            </ion-item>
+            
+          </ion-item-group>
+        </ion-list>
+      </ion-col> 
+    </ion-row>
+  </ion-grid>
+
+  <ion-fab [activated]="fabBtActive"
+    vertical="center"
+    horizontal="center"
+    slot="fixed"
+    [hidden]="fabBtHidden"
+  >
+    <ion-fab-button >
+      <ion-icon style="font-size:64px;" name="add-circle"></ion-icon>
+    </ion-fab-button>
+
+    <ion-fab-list side="start">
+      <ion-fab-button >
+        <ion-icon
+          style="font-size:64px;"
+          name="images"
+          (click)="getImage()"
+        ></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+    <ion-fab-list side="end">
+      <ion-fab-button >
+        <ion-icon
+          style="font-size:64px;"
+          name="camera"
+          (click)="takePhoto()"
+        ></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
+  <!-- <ion-button (click)="takePhoto()" expand="full" color="primary">Take Photo</ion-button>
+  <ion-button (click)="getImage()" expand="full" color="secondary">Get Photo From Library</ion-button>
+  <ion-button (click)="cropImage()" expand="full" color="danger">Crop Image</ion-button>
+  <ion-button (click)="uploadImage()" expand="full" color="dark">Upload Image</ion-button> -->
+
+  <!-- <div>
+    <ion-buttons slot="primary">
+      <ion-button color="dark">
+        <ion-icon style="font-size: 128px;" name="folder"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+  <div>
+    <ion-buttons slot="primary">
+      <ion-button color="dark">
+        <ion-icon style="font-size: 128px;" name="image"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </div>
+  <div style="float: none">
+      <ion-buttons slot="primary">
+        <ion-button color="dark">
+          <ion-icon style="font-size: 128px;" name="image"></ion-icon>
+        </ion-button>
+      </ion-buttons>
+    </div> -->
+
+  <!-- <ion-card>
     <form [formGroup]="myForm" (ngSubmit)="registerUser()">
       <ion-item>
         <ion-label>User :</ion-label>
@@ -25,5 +114,5 @@
         Register
       </ion-button>
     </form>
-  </ion-card>
+  </ion-card> -->
 </ion-content>

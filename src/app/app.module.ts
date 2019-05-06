@@ -16,6 +16,7 @@ import { File } from '@ionic-native/file/ngx';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { IonicStorageModule } from '@ionic/storage';
+import { LoadingController } from '@ionic/angular';
 
 @NgModule({
   declarations: [AppComponent],
@@ -35,6 +36,7 @@ import { IonicStorageModule } from '@ionic/storage';
     Camera,
     FileTransfer,
     File,
+    LoadingController,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController, LoadingController, ToastController } from '@ionic/angular';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 import { UserService } from '../services/user.service';
@@ -9,7 +9,7 @@ import { Storage } from '@ionic/storage';
   templateUrl: 'tab3.page.html',
   styleUrls: ['tab3.page.scss']
 })
-export class Tab3Page {
+export class Tab3Page implements OnInit {
   DJANGO_SERVER: string = "http://192.168.137.1:8000";
   form: FormGroup;
   response;
